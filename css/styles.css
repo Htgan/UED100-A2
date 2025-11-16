@@ -4,69 +4,79 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
+  color: #222;
+  background-color: #f5f5f5;
 }
 
-/* Page wrapper so content doesn't run edge-to-edge on wide screens. */
+/* Page wrapper so content does not run edge-to-edge on wide screens. */
 .page {
   max-width: 960px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: 1.5rem auto;
+  padding: 0 1rem 1.5rem;
 }
 
 /* Headings share the same base spacing. */
 h1,
 h2,
 h3 {
-  margin: 1rem 0 0.5rem;
+  margin: 0 0 0.5rem;
 }
 
 /* Main page title - one place to tweak the listing's primary heading. */
 .heading-main {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
+  margin-bottom: 0.3rem;
 }
 
 /* Section headings - used for all major blocks on the page. */
 .heading-sub {
   font-size: 1.2rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 /* For metadata or explanatory copy that should sit a bit quieter. */
 .muted {
-  color: #555;
+  color: #666;
   font-size: 0.9rem;
 }
 
-/* Default spacing for paragraphs and forms. */
-p,
-form {
+/* Default spacing for paragraphs. */
+p {
   margin: 0 0 0.75rem;
 }
 
-/* Generic section wrapper – gives each block some vertical breathing room
-   and a light divider so content doesn't blur together. */
+/* Generic section wrapper. */
 .section {
   padding: 0.75rem 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: none;
 }
 
 /* Header layout: keep the title and meta grouped clearly. */
 .section-header {
-  border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 1rem;
+  border-bottom: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
 }
 
 .listing-meta {
-  margin-top: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9rem;
 }
 
 /* Main layout: single column on small screens, two columns on larger screens. */
 .layout-main {
   display: block;
+  margin-top: 1rem;
 }
 
-/* Primary content and aside share the same section styling;
-   we just give them layout roles here. */
+/* Primary content and aside share the same section styling; we just give them layout roles here. */
 .layout-main__primary {
   /* placeholder for now */
 }
@@ -77,110 +87,7 @@ form {
 
 /* Gallery layout: main image on top, thumbnails in a row or grid underneath. */
 .section-gallery {
-  /* placeholder for now */
-}
-
-.gallery-main img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-/* Thumbnails: use a simple flexible row that wraps when needed. */
-.gallery-thumbs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-}
-
-.gallery-thumb {
-  max-width: 120px;
-  font-size: 0.8rem;
-}
-
-.gallery-thumb img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-/* Details blocks: make terms and values line up in a simple grid. */
-.details-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.5rem 1.5rem;
-  margin: 0;
-}
-
-.details-grid dt {
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.details-grid dd {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-/* Responsive: on wider screens, put the aside on the right. */
-@media (min-width: 768px) {
-  .layout-main {
-    display: grid;
-    grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr);
-    column-gap: 1.5rem;
-  }
-
-  .layout-main__aside {
-    margin-top: 0; /* align with primary column top */
-  }
-}
-
-/* Basic form layout and feedback styles. */
-
-form {
-  max-width: 480px;
-}
-
-/* Group label, control, and error together. */
-.form-field {
-  margin-bottom: 0.75rem;
-}
-
-/* Inputs and textarea share common styling. */
-.form-field input,
-.form-field textarea {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  padding: 0.4rem 0.5rem;
-  border: 1px solid #bbb;
-  border-radius: 4px;
-  font: inherit;
-}
-
-/* Slight focus outline for accessibility. */
-.form-field input:focus,
-.form-field textarea:focus {
-  outline: 2px solid #4a90e2;
-  outline-offset: 1px;
-}
-
-/* Error message text. */
-.form-error {
-  margin: 0.25rem 0 0;
-  font-size: 0.8rem;
-  color: #c0392b;
-  min-height: 1em;
-}
-
-/* Form status (success/info) under the button. */
-.form-status {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #2e7d32;
+  margin-bottom: 1rem;
 }
 
 /* Main gallery image */
@@ -188,7 +95,12 @@ form {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 6px;
+}
+
+/* Caption under main image. */
+#gallery-main-caption {
+  margin-top: 0.35rem;
 }
 
 /* Thumbnails as interactive buttons */
@@ -236,7 +148,147 @@ form {
   cursor: pointer;
 }
 
+.gallery-button:hover {
+  background-color: #e9e9e9;
+}
+
 .gallery-button:focus {
   outline: 2px solid #4a90e2;
   outline-offset: 1px;
+}
+
+/* Details blocks: make terms and values line up in a simple grid. */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem 1.5rem;
+  margin: 0.25rem 0 0;
+}
+
+.details-grid dt {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.details-grid dd {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #222;
+}
+
+/* Responsive: on wider screens, put the aside on the right. */
+@media (min-width: 768px) {
+  .layout-main {
+    display: grid;
+    grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr);
+    column-gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .layout-main__aside {
+    margin-top: 0;
+  }
+}
+
+/* Basic form layout and feedback styles. */
+
+form {
+  max-width: 480px;
+}
+
+/* Group label, control, and error together. */
+.form-field {
+  margin-bottom: 0.75rem;
+}
+
+/* Inputs and textarea share common styling. */
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font: inherit;
+  background-color: #fafafa;
+}
+
+/* Slight focus outline for accessibility. */
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 1px;
+  background-color: #ffffff;
+}
+
+/* Error message text. */
+.form-error {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: #c0392b;
+  min-height: 1em;
+}
+
+/* Form status (success/info) under the button. */
+.form-status {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #2e7d32;
+}
+
+/* Primary button used for form submit. */
+button[type="submit"] {
+  padding: 0.45rem 1.1rem;
+  border-radius: 4px;
+  border: 1px solid #00796b;
+  background-color: #009688;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #00897b;
+}
+
+button[type="submit"]:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 1px;
+}
+
+/* Seller details block in the aside. */
+#seller-details p {
+  margin: 0 0 0.35rem;
+}
+
+#seller-details p:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer: visually distinct but simple. */
+footer.section {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+  background-color: transparent;
+}
+
+/* Card-like styling for core sections without duplicating rules. */
+#gallery,
+#key-details,
+#more-details,
+#description,
+#contact-seller,
+#seller-details {
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  margin-bottom: 0.75rem;
 }
