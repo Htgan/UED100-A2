@@ -1,8 +1,29 @@
-
+/* basic typography and spacing */
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
+}
+
+/* page wrapper to control width and horizontal padding */
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1, h2, h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+/* Only apply default margins to paragraphs and forms */
+p, form {
+  margin: 0 0 0.75rem;
+}
+
+/* reset section/header/footer/aside margins, let .section handle spacing */
+section, header, footer, aside {
+  margin: 0;
 }
 
 h1, h2, h3 {
