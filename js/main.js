@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   setupDetailsToggle();
   // Back to top button
   setupBackToTop();
+  // save listing toggle
+  setupSaveToggle();
 });
 
 // client-side validation for the contact form.
@@ -151,5 +153,31 @@ function setupBackToTop() {
       top: 0,
       behavior: "smooth"
     });
+  });
+};
+
+// Simple "save listing" toggle button in the header.
+
+function setupSaveToggle() {
+  var button = document.getElementById("save-toggle");
+  if (!button) {
+    return;
+  }
+
+  button.addEventListener("click", function () {
+    var isPressed = button.getAttribute("aria-pressed") === "true";
+    var newState = !isPressed;
+
+    // Update aria-pressed for assistive technologies.
+    button.setAttribute("aria-pressed", newState ? "true" : "false");
+
+    // Visual state.
+    if (newState) {
+      button.classList.add("is-saved");
+      button.textContent = "★ Saved";
+    } else {
+      button.classList.remove("is-saved");
+      button.textContent = "☆ Save";
+    }
   });
 };

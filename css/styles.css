@@ -564,3 +564,39 @@ footer.section {
   height: 24px;
   display: block;
 }
+
+/* Header row with title and save toggle */
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* Save listing toggle */
+.save-toggle {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #333;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.save-toggle:hover {
+  background-color: #f5f5f5;
+}
+
+.save-toggle:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 1px;
+}
+
+.save-toggle.is-saved {
+  border-color: #ff9800;
+  background-color: #fff3e0;
+  color: #e65100;
+}
