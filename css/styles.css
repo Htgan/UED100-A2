@@ -182,3 +182,61 @@ form {
   font-size: 0.9rem;
   color: #2e7d32;
 }
+
+/* Main gallery image */
+.gallery-main img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Thumbnails as interactive buttons */
+.gallery-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.gallery-thumb {
+  max-width: 120px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+}
+
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+/* Highlight the current thumbnail */
+.gallery-thumb.is-active {
+  border-color: #4a90e2;
+}
+
+/* Simple layout for gallery controls */
+.gallery-controls {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.gallery-button {
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  background-color: #f5f5f5;
+  font: inherit;
+  cursor: pointer;
+}
+
+.gallery-button:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 1px;
+}

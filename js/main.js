@@ -1,6 +1,13 @@
+// Wait until the whole HTML document has been loaded and parsed
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialise the contact form and gallery functions
+  setupContactForm();
+  setupGallery();
+});
+
 // client-side validation for the contact form.
 
-document.addEventListener("DOMContentLoaded", function () {
+function setupContactForm() {
   // Look up the form element once the DOM is ready.
   var form = document.getElementById("contact-form");
   // If the form isn't on the page, don't do anything.
@@ -85,4 +92,4 @@ document.addEventListener("DOMContentLoaded", function () {
     var emailPattern = /^\S+@\S+\.\S+$/;
     return emailPattern.test(value);
   }
-});
+};
