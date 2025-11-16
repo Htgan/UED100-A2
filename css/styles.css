@@ -137,3 +137,48 @@ form {
     margin-top: 0; /* align with primary column top */
   }
 }
+
+/* Basic form layout and feedback styles. */
+
+form {
+  max-width: 480px;
+}
+
+/* Group label, control, and error together. */
+.form-field {
+  margin-bottom: 0.75rem;
+}
+
+/* Inputs and textarea share common styling. */
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font: inherit;
+}
+
+/* Slight focus outline for accessibility. */
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 1px;
+}
+
+/* Error message text. */
+.form-error {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: #c0392b;
+  min-height: 1em;
+}
+
+/* Form status (success/info) under the button. */
+.form-status {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #2e7d32;
+}
