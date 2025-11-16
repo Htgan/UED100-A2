@@ -25,70 +25,74 @@
       <!-- LEFT COLUMN: main listing content -->
       <div class="layout-main__primary">
         <section id="gallery" class="section section-gallery">
-          <div class="gallery-main">
-            <img
-              id="gallery-main-image"
-              src="assets/images/macaw-1.jpg"
-              alt="Front view of the Blue-and-yellow Macaw in a perched pose">
-            <p class="muted" id="gallery-main-caption">
-              Front view of the Blue-and-yellow Macaw in a perched pose
-            </p>
-          </div>
+          <div class="gallery">
+            <div class="gallery-main">
+              <img
+                id="gallery-main-image"
+                src="assets/images/macaw-1.jpg"
+                alt="Front view of the Blue-and-yellow Macaw in a perched pose">
+              <p class="gallery-caption muted" id="gallery-main-caption">
+                Front view of the Blue-and-yellow Macaw in a perched pose
+              </p>
 
-          <div
-            class="gallery-thumbs"
-            role="list"
-            aria-label="Macaw image thumbnails">
-            <button
-              type="button"
-              class="gallery-thumb is-active"
-              role="listitem"
-              data-full="assets/images/macaw-1.jpg"
-              data-caption="Front view of the Blue-and-yellow Macaw in a perched pose">
-              <img src="assets/images/macaw-1-thumb.jpg" alt="Front view of the specimen">
-            </button>
+              <!-- Overlayed prev/next controls -->
+              <button
+                type="button"
+                class="gallery-arrow gallery-arrow--prev"
+                id="gallery-prev"
+                aria-label="Previous image">
+                &lt;
+              </button>
+              <button
+                type="button"
+                class="gallery-arrow gallery-arrow--next"
+                id="gallery-next"
+                aria-label="Next image">
+                &gt;
+              </button>
 
-            <button
-              type="button"
-              class="gallery-thumb"
-              role="listitem"
-              data-full="assets/images/macaw-2.jpg"
-              data-caption="Side view of the Blue-and-yellow Macaw showing wing detail">
-              <img src="assets/images/macaw-2-thumb.jpg" alt="Side view of the specimen">
-            </button>
+              <!-- Overlayed thumbnail strip at bottom -->
+              <div
+                class="gallery-thumbs"
+                role="list"
+                aria-label="Macaw image thumbnails">
+                <button
+                  type="button"
+                  class="gallery-thumb is-active"
+                  role="listitem"
+                  data-full="assets/images/macaw-1.jpg"
+                  data-caption="Front view of the Blue-and-yellow Macaw in a perched pose">
+                  <img src="assets/images/macaw-1-thumb.jpg" alt="Front view of the specimen">
+                </button>
 
-            <button
-              type="button"
-              class="gallery-thumb"
-              role="listitem"
-              data-full="assets/images/macaw-3.jpg"
-              data-caption="Back view of the Blue-and-yellow Macaw on its perch">
-              <img src="assets/images/macaw-3-thumb.jpg" alt="Back view of the specimen">
-            </button>
+                <button
+                  type="button"
+                  class="gallery-thumb"
+                  role="listitem"
+                  data-full="assets/images/macaw-2.jpg"
+                  data-caption="Side view of the Blue-and-yellow Macaw showing wing detail">
+                  <img src="assets/images/macaw-2-thumb.jpg" alt="Side view of the specimen">
+                </button>
 
-            <button
-              type="button"
-              class="gallery-thumb"
-              role="listitem"
-              data-full="assets/images/macaw-4.jpg"
-              data-caption="Alternate side view highlighting tail feathers">
-              <img src="assets/images/macaw-4-thumb.jpg" alt="Other side view of the specimen">
-            </button>
-          </div>
+                <button
+                  type="button"
+                  class="gallery-thumb"
+                  role="listitem"
+                  data-full="assets/images/macaw-3.jpg"
+                  data-caption="Back view of the Blue-and-yellow Macaw on its perch">
+                  <img src="assets/images/macaw-3-thumb.jpg" alt="Back view of the specimen">
+                </button>
 
-          <div class="gallery-controls" aria-label="Gallery controls">
-            <button
-              type="button"
-              class="gallery-button"
-              id="gallery-prev">
-              Previous
-            </button>
-            <button
-              type="button"
-              class="gallery-button"
-              id="gallery-next">
-              Next
-            </button>
+                <button
+                  type="button"
+                  class="gallery-thumb"
+                  role="listitem"
+                  data-full="assets/images/macaw-4.jpg"
+                  data-caption="Alternate side view highlighting tail feathers">
+                  <img src="assets/images/macaw-4-thumb.jpg" alt="Other side view of the specimen">
+                </button>
+              </div>
+            </div>
           </div>
         </section>
 
