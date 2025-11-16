@@ -93,6 +93,8 @@
 
           <section id="key-details" class="section">
             <h2 class="heading-sub">Key details</h2>
+
+            <!-- Always-visible key details -->
             <dl class="details-grid">
               <div>
                 <dt>Condition</dt>
@@ -111,24 +113,35 @@
                 <dd>Enjoying with your eyes</dd>
               </div>
             </dl>
-          </section>
 
-          <section id="more-details" class="section">
-            <h3 class="heading-sub">More details</h3>
-            <dl class="details-grid">
-              <div>
-                <dt>Model</dt>
-                <dd>Blue and Yellow Macaw</dd>
-              </div>
-              <div>
-                <dt>Height</dt>
-                <dd>15 inches</dd>
-              </div>
-              <div>
-                <dt>Included accessories</dt>
-                <dd>Mount</dd>
-              </div>
-            </dl>
+            <!-- Toggle button for additional details -->
+            <button
+              type="button"
+              class="details-toggle"
+              id="details-toggle"
+              aria-expanded="false"
+              aria-controls="extra-details"
+            >
+              View more details
+            </button>
+
+            <!-- Collapsible extra details (initially hidden) -->
+            <div id="extra-details" class="details-extra" hidden>
+              <dl class="details-grid">
+                <div>
+                  <dt>Model</dt>
+                  <dd>Blue and Yellow Macaw</dd>
+                </div>
+                <div>
+                  <dt>Height</dt>
+                  <dd>15 inches</dd>
+                </div>
+                <div>
+                  <dt>Included accessories</dt>
+                  <dd>Mount</dd>
+                </div>
+              </dl>
+            </div>
           </section>
 
         <section id="description" class="section">

@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialise the contact form and gallery functions
   setupContactForm();
   setupGallery();
+  // Initialise toggle button for extra details
+  setupDetailsToggle();
 });
 
 // client-side validation for the contact form.
@@ -92,4 +94,34 @@ function setupContactForm() {
     var emailPattern = /^\S+@\S+\.\S+$/;
     return emailPattern.test(value);
   }
+};
+
+// Toggle the extra "More details" section within the key details panel.
+
+function setupDetailsToggle() {
+  // Look up the toggle button and extra details container.
+  var toggle = document.getElementById("details-toggle");
+  var extraDetails = document.getElementById("extra-details");
+
+  // If either is missing, do nothing.
+  if (!toggle || !extraDetails) {
+    return;
+  }
+
+  toggle.addEventListener("click", function () {
+    // Check the current expanded state from the aria attribute.
+    var isExpanded = toggle.getAttribute("aria-expanded") === "true";
+
+    // Flip the state.
+    var newExpanded = !isExpanded;
+
+    // Update aria-expanded for screen readers.
+    toggle.setAttribute("aria-expanded", newExpanded ? "true" : "false");
+
+    // Show or hide the extra details block.
+    extraDetails.hidden = !newExpanded;
+
+    // Update button text so it reads naturally in both states.
+    toggle.textContent = newExpanded ? "View fewer details" : "View more details";
+  });
 };
