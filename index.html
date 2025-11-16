@@ -81,12 +81,29 @@
         Use this form to send a message to the seller. Please include your preferred contact
         details.
       </p>
-      <div>
-        <p>Name</p>
-        <p>Email</p>
-        <p>Message</p>
-        <p>Hi, I'm interested in your Blue-and-yellow Macaw (taxidermy). Is it still available?</p>
-      </div>
+
+      <form>
+        <div>
+          <label for="contact-name">Name</label>
+          <input id="contact-name" name="name" type="text">
+        </div>
+
+        <div>
+          <label for="contact-email">Email</label>
+          <input id="contact-email" name="email" type="email">
+        </div>
+
+        <div>
+          <label for="contact-message">Message</label>
+          <textarea
+            id="contact-message"
+            name="message"
+            rows="4"
+          >Hi, I'm interested in your Blue-and-yellow Macaw (taxidermy). Is it still available?</textarea>
+        </div>
+
+        <button type="submit">Send message</button>
+      </form>
     </section>
 
     <aside id="seller-details">
