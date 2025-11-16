@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   setupGallery();
   // Initialise toggle button for extra details
   setupDetailsToggle();
+  // Back to top button
+  setupBackToTop();
 });
 
 // client-side validation for the contact form.
@@ -123,5 +125,31 @@ function setupDetailsToggle() {
 
     // Update button text so it reads naturally in both states.
     toggle.textContent = newExpanded ? "View fewer details" : "View more details";
+  });
+};
+
+// Show a back-to-top button after scrolling, and scroll smoothly on click.
+
+function setupBackToTop() {
+  var button = document.getElementById("back-to-top");
+  if (!button) {
+    return;
+  }
+
+  // Toggle visibility based on scroll position.
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      button.classList.add("is-visible");
+    } else {
+      button.classList.remove("is-visible");
+    }
+  });
+
+  // Scroll smoothly to the top when the button is clicked.
+  button.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
 };

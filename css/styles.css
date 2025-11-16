@@ -524,3 +524,43 @@ footer.section {
     margin-top: 0;
   }
 }
+
+/* Back-to-top button */
+
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  background-color: #009688;
+  color: #ffffff;
+  font-size: 1.2rem;
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 50;
+}
+
+.back-to-top:hover {
+  filter: brightness(0.97);
+}
+
+.back-to-top:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 1px;
+}
+
+.back-to-top.is-visible {
+  display: inline-flex;
+}
+
+.back-to-top-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
