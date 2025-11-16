@@ -10,36 +10,36 @@ body {
 
 /* Page wrapper so content does not run edge-to-edge on wide screens. */
 .page {
-  max-width: 960px;
-  margin: 1.5rem auto;
-  padding: 0 1rem 1.5rem;
+  max-width: 1060px;
+  margin: 2rem auto 2.5rem;
+  padding: 0 1.25rem 1.5rem;
 }
 
 /* Headings share the same base spacing. */
 h1,
 h2,
 h3 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.45rem;
 }
 
 /* Main page title - one place to tweak the listing's primary heading. */
 .heading-main {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
 }
 
 /* Section headings - used for all major blocks on the page. */
 .heading-sub {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 /* For metadata or explanatory copy that should sit a bit quieter. */
 .muted {
-  color: #666;
-  font-size: 0.9rem;
+  color: #6b6b6b;
+  font-size: 0.88rem;
 }
 
 /* Default spacing for paragraphs. */
@@ -56,18 +56,25 @@ p {
 /* Header layout: keep the title and meta grouped clearly. */
 .section-header {
   background-color: #ffffff;
-  border-radius: 6px;
-  padding: 1rem;
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem 1rem;
   border-bottom: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  margin-bottom: 1rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+  margin-bottom: 1.25rem;
 }
 
 .listing-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  font-size: 0.9rem;
+  gap: 0.9rem;
+  font-size: 0.88rem;
+  color: #6b6b6b;
+}
+
+.listing-meta span + span::before {
+  content: "•";
+  margin: 0 0.45rem 0 0.15rem;
+  color: #c0c0c0;
 }
 
 /* Main layout: single column on small screens, two columns on larger screens. */
@@ -319,14 +326,15 @@ form {
 
 /* Primary button used for form submit. */
 button[type="submit"] {
-  padding: 0.45rem 1.1rem;
-  border-radius: 4px;
-  border: 1px solid #00796b;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid #009688;
   background-color: #009688;
   color: #ffffff;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 150, 136, 0.25);
 }
 
 button[type="submit"]:hover {
@@ -349,8 +357,8 @@ button[type="submit"]:focus {
 
 /* Footer: visually distinct but simple. */
 footer.section {
-  margin-top: 1rem;
-  padding-top: 0.75rem;
+  margin-top: 1.75rem;
+  padding-top: 1rem;
   border-top: 1px solid #ddd;
   text-align: center;
   color: #777;
@@ -361,6 +369,7 @@ footer.section {
 /* Card-like styling for core sections without duplicating rules. */
 #gallery,
 #key-details,
+#more-details,
 #description,
 #contact-seller,
 #seller-details {
@@ -369,17 +378,22 @@ footer.section {
   padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   margin-bottom: 0.75rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+  margin-bottom: 1rem;
 }
-/* Seller panel in the right column */
 
+/* Seller panel in the right column */
 #seller-details {
   display: block;
 }
 
 /* Large price at top of seller panel */
 .seller-price {
-  margin: 0 0 0.5rem;
-  font-size: 1.6rem;
+  margin: 0 0 0.4rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: #009688;
 }
@@ -396,8 +410,8 @@ footer.section {
   width: 100%;
   box-sizing: border-box;
   margin-top: 0.75rem;
-  padding: 0.45rem 0.8rem;
-  border-radius: 4px;
+  padding: 0.52rem 0.9rem;
+  border-radius: 999px;
   border: 1px solid transparent;
   font: inherit;
   font-size: 0.95rem;
@@ -431,7 +445,7 @@ footer.section {
 /* Offer section inside seller panel */
 
 .seller-offer {
-  margin-top: 1rem;
+  margin-top: 0.9rem;
   padding-top: 0.75rem;
   border-top: 1px solid #eee;
 }
@@ -575,7 +589,7 @@ footer.section {
 
 /* Save listing toggle */
 .save-toggle {
-  padding: 0.35rem 0.8rem;
+  padding: 0.35rem 0.9rem;
   border-radius: 999px;
   border: 1px solid #ccc;
   background-color: #ffffff;
