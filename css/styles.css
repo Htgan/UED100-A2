@@ -177,20 +177,6 @@ p {
   color: #222;
 }
 
-/* Responsive: on wider screens, put the aside on the right. */
-@media (min-width: 768px) {
-  .layout-main {
-    display: grid;
-    grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr);
-    column-gap: 1.5rem;
-    align-items: flex-start;
-  }
-
-  .layout-main__aside {
-    margin-top: 0;
-  }
-}
-
 /* Basic form layout and feedback styles. */
 
 form {
@@ -282,7 +268,6 @@ footer.section {
 /* Card-like styling for core sections without duplicating rules. */
 #gallery,
 #key-details,
-#more-details,
 #description,
 #contact-seller,
 #seller-details {
@@ -291,6 +276,115 @@ footer.section {
   padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   margin-bottom: 0.75rem;
+}
+/* Seller panel in the right column */
+
+#seller-details {
+  display: block;
+}
+
+/* Large price at top of seller panel */
+.seller-price {
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #009688;
+}
+
+/* Seller name */
+.seller-name {
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+}
+
+/* Seller action buttons */
+.seller-button {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.75rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Primary: message seller */
+.seller-button--primary {
+  background-color: #009688;
+  border-color: #00796b;
+  color: #ffffff;
+}
+
+/* Secondary: send offer */
+.seller-button--secondary {
+  background-color: #ffffff;
+  border-color: #009688;
+  color: #009688;
+}
+
+.seller-button:hover {
+  filter: brightness(0.97);
+}
+
+.seller-button:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 1px;
+}
+
+/* Offer section inside seller panel */
+
+.seller-offer {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eee;
+}
+
+.seller-offer__heading {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.seller-offer__label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.seller-offer__row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.seller-offer__currency {
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #bbb;
+  border-right: none;
+  background-color: #fafafa;
+  font-size: 0.95rem;
+}
+
+.seller-offer__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #bbb;
+  font: inherit;
+  background-color: #fafafa;
+  box-sizing: border-box;
+}
+
+.seller-offer__input:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 1px;
+  background-color: #ffffff;
 }
 
 /* Key details toggle for extra details */
@@ -322,4 +416,18 @@ footer.section {
   margin-top: 0.75rem;
   padding-top: 0.75rem;
   border-top: 1px solid #eee;
+}
+
+/* Responsive: on wider screens, put the aside on the right. */
+@media (min-width: 768px) {
+  .layout-main {
+    display: grid;
+    grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr);
+    column-gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .layout-main__aside {
+    margin-top: 0;
+  }
 }

@@ -20,129 +20,129 @@
       </p>
     </header>
 
-    <main id="main-content">
-      <div class="layout-main">
-          <div class="layout-main__primary">
-          <section id="gallery" class="section section-gallery">
-            <div class="gallery-main">
-              <img
-                id="gallery-main-image"
-                src="assets/images/macaw-1.jpg"
-                alt="Front view of the Blue-and-yellow Macaw in a perched pose">
-              <p class="muted" id="gallery-main-caption">
-                Front view of the Blue-and-yellow Macaw in a perched pose
-              </p>
-            </div>
+  <main id="main-content">
+    <div class="layout-main">
+      <!-- LEFT COLUMN: main listing content -->
+      <div class="layout-main__primary">
+        <section id="gallery" class="section section-gallery">
+          <div class="gallery-main">
+            <img
+              id="gallery-main-image"
+              src="assets/images/macaw-1.jpg"
+              alt="Front view of the Blue-and-yellow Macaw in a perched pose">
+            <p class="muted" id="gallery-main-caption">
+              Front view of the Blue-and-yellow Macaw in a perched pose
+            </p>
+          </div>
 
-            <div
-              class="gallery-thumbs"
-              role="list"
-              aria-label="Macaw image thumbnails">
-              <button
-                type="button"
-                class="gallery-thumb is-active"
-                role="listitem"
-                data-full="assets/images/macaw-1.jpg"
-                data-caption="Front view of the Blue-and-yellow Macaw in a perched pose">
-                <img src="assets/images/macaw-1-thumb.jpg" alt="Front view of the specimen">
-              </button>
-
-              <button
-                type="button"
-                class="gallery-thumb"
-                role="listitem"
-                data-full="assets/images/macaw-2.jpg"
-                data-caption="Side view of the Blue-and-yellow Macaw showing wing detail">
-                <img src="assets/images/macaw-2-thumb.jpg" alt="Side view of the specimen">
-              </button>
-
-              <button
-                type="button"
-                class="gallery-thumb"
-                role="listitem"
-                data-full="assets/images/macaw-3.jpg"
-                data-caption="Back view of the Blue-and-yellow Macaw on its perch">
-                <img src="assets/images/macaw-3-thumb.jpg" alt="Back view of the specimen">
-              </button>
-
-              <button
-                type="button"
-                class="gallery-thumb"
-                role="listitem"
-                data-full="assets/images/macaw-4.jpg"
-                data-caption="Alternate side view highlighting tail feathers">
-                <img src="assets/images/macaw-4-thumb.jpg" alt="Other side view of the specimen">
-              </button>
-            </div>
-
-            <div class="gallery-controls" aria-label="Gallery controls">
-              <button
-                type="button"
-                class="gallery-button"
-                id="gallery-prev">
-                Previous
-              </button>
-              <button
-                type="button"
-                class="gallery-button"
-                id="gallery-next">
-                Next
-              </button>
-            </div>
-          </section>
-
-          <section id="key-details" class="section">
-            <h2 class="heading-sub">Key details</h2>
-
-            <!-- Always-visible key details -->
-            <dl class="details-grid">
-              <div>
-                <dt>Condition</dt>
-                <dd>Used</dd>
-              </div>
-              <div>
-                <dt>Type</dt>
-                <dd>Taxidermy</dd>
-              </div>
-              <div>
-                <dt>Brand</dt>
-                <dd>Hand made</dd>
-              </div>
-              <div>
-                <dt>Suitable for</dt>
-                <dd>Enjoying with your eyes</dd>
-              </div>
-            </dl>
-
-            <!-- Toggle button for additional details -->
+          <div
+            class="gallery-thumbs"
+            role="list"
+            aria-label="Macaw image thumbnails">
             <button
               type="button"
-              class="details-toggle"
-              id="details-toggle"
-              aria-expanded="false"
-              aria-controls="extra-details"
-            >
-              View more details
+              class="gallery-thumb is-active"
+              role="listitem"
+              data-full="assets/images/macaw-1.jpg"
+              data-caption="Front view of the Blue-and-yellow Macaw in a perched pose">
+              <img src="assets/images/macaw-1-thumb.jpg" alt="Front view of the specimen">
             </button>
 
-            <!-- Collapsible extra details (initially hidden) -->
-            <div id="extra-details" class="details-extra" hidden>
-              <dl class="details-grid">
-                <div>
-                  <dt>Model</dt>
-                  <dd>Blue and Yellow Macaw</dd>
-                </div>
-                <div>
-                  <dt>Height</dt>
-                  <dd>15 inches</dd>
-                </div>
-                <div>
-                  <dt>Included accessories</dt>
-                  <dd>Mount</dd>
-                </div>
-              </dl>
+            <button
+              type="button"
+              class="gallery-thumb"
+              role="listitem"
+              data-full="assets/images/macaw-2.jpg"
+              data-caption="Side view of the Blue-and-yellow Macaw showing wing detail">
+              <img src="assets/images/macaw-2-thumb.jpg" alt="Side view of the specimen">
+            </button>
+
+            <button
+              type="button"
+              class="gallery-thumb"
+              role="listitem"
+              data-full="assets/images/macaw-3.jpg"
+              data-caption="Back view of the Blue-and-yellow Macaw on its perch">
+              <img src="assets/images/macaw-3-thumb.jpg" alt="Back view of the specimen">
+            </button>
+
+            <button
+              type="button"
+              class="gallery-thumb"
+              role="listitem"
+              data-full="assets/images/macaw-4.jpg"
+              data-caption="Alternate side view highlighting tail feathers">
+              <img src="assets/images/macaw-4-thumb.jpg" alt="Other side view of the specimen">
+            </button>
+          </div>
+
+          <div class="gallery-controls" aria-label="Gallery controls">
+            <button
+              type="button"
+              class="gallery-button"
+              id="gallery-prev">
+              Previous
+            </button>
+            <button
+              type="button"
+              class="gallery-button"
+              id="gallery-next">
+              Next
+            </button>
+          </div>
+        </section>
+
+        <section id="key-details" class="section">
+          <h2 class="heading-sub">Key details</h2>
+
+          <!-- Always-visible key details -->
+          <dl class="details-grid">
+            <div>
+              <dt>Condition</dt>
+              <dd>Used</dd>
             </div>
-          </section>
+            <div>
+              <dt>Type</dt>
+              <dd>Taxidermy</dd>
+            </div>
+            <div>
+              <dt>Brand</dt>
+              <dd>Hand made</dd>
+            </div>
+            <div>
+              <dt>Suitable for</dt>
+              <dd>Enjoying with your eyes</dd>
+            </div>
+          </dl>
+
+          <!-- Toggle button for additional details -->
+          <button
+            type="button"
+            class="details-toggle"
+            id="details-toggle"
+            aria-expanded="false"
+            aria-controls="extra-details">
+            View more details
+          </button>
+
+          <!-- Collapsible extra details (initially hidden) -->
+          <div id="extra-details" class="details-extra" hidden>
+            <dl class="details-grid">
+              <div>
+                <dt>Model</dt>
+                <dd>Blue and Yellow Macaw</dd>
+              </div>
+              <div>
+                <dt>Height</dt>
+                <dd>15 inches</dd>
+              </div>
+              <div>
+                <dt>Included accessories</dt>
+                <dd>Mount</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
 
         <section id="description" class="section">
           <h2 class="heading-sub">Description</h2>
@@ -176,8 +176,7 @@
                 id="contact-name"
                 name="name"
                 type="text"
-                required
-              >
+                required>
               <p class="form-error" id="error-contact-name"></p>
             </div>
 
@@ -187,8 +186,7 @@
                 id="contact-email"
                 name="email"
                 type="email"
-                required
-              >
+                required>
               <p class="form-error" id="error-contact-email"></p>
             </div>
 
@@ -209,20 +207,53 @@
               id="contact-status"
               class="form-status"
               role="status"
-              aria-live="polite"
-            ></p>
+              aria-live="polite"></p>
           </form>
         </section>
-
-        <aside id="seller-details" class="section layout-main__aside">
-          <h2 class="heading-sub">Seller details</h2>
-          <p>John D.</p>
-          <p>Joined Gumtree in 2016 · 54 ads</p>
-        </aside>
-
       </div>
 
-    </main>
+      <!-- RIGHT COLUMN: seller panel -->
+      <aside id="seller-details" class="section layout-main__aside">
+        <!-- Price highlighted at the top of the seller panel -->
+        <p class="seller-price">$450</p>
+
+        <h2 class="heading-sub">Seller details</h2>
+        <p class="seller-name">John D.</p>
+        <p class="muted">Joined Gumtree in 2016 · 54 ads</p>
+
+        <!-- Primary action: message seller via platform (dummy button) -->
+        <button type="button" class="seller-button seller-button--primary">
+          Message seller
+        </button>
+
+        <!-- Secondary action: make an offer -->
+        <section class="seller-offer">
+          <h3 class="seller-offer__heading">Make an offer</h3>
+          <p class="muted">
+            Enter an offer amount and send it to the seller.
+          </p>
+
+          <form class="seller-offer__form" novalidate>
+            <label for="offer-amount" class="seller-offer__label">Your offer</label>
+            <div class="seller-offer__row">
+              <span class="seller-offer__currency">$</span>
+              <input
+                id="offer-amount"
+                name="offer-amount"
+                type="number"
+                min="1"
+                step="1"
+                class="seller-offer__input"
+                value="450">
+            </div>
+            <button type="submit" class="seller-button seller-button--secondary">
+              Send offer
+            </button>
+          </form>
+        </section>
+      </aside>
+    </div>
+  </main>
 
     <footer  class="section">
       <p>© 2025 Gumtree Pty Limited.</p>
