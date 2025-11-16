@@ -50,3 +50,90 @@ form {
   padding: 0.75rem 0;
   border-bottom: 1px solid #ddd;
 }
+
+/* Header layout: keep the title and meta grouped clearly. */
+.section-header {
+  border-bottom: 1px solid #ddd;
+}
+
+.listing-meta {
+  margin-top: 0.25rem;
+}
+
+/* Main layout: single column on small screens, two columns on larger screens. */
+.layout-main {
+  display: block;
+}
+
+/* Primary content and aside share the same section styling;
+   we just give them layout roles here. */
+.layout-main__primary {
+  /* placeholder for now */
+}
+
+.layout-main__aside {
+  margin-top: 1rem;
+}
+
+/* Gallery layout: main image on top, thumbnails in a row or grid underneath. */
+.section-gallery {
+  /* placeholder for now */
+}
+
+.gallery-main img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Thumbnails: use a simple flexible row that wraps when needed. */
+.gallery-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.gallery-thumb {
+  max-width: 120px;
+  font-size: 0.8rem;
+}
+
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Details blocks: make terms and values line up in a simple grid. */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+}
+
+.details-grid dt {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.details-grid dd {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive: on wider screens, put the aside on the right. */
+@media (min-width: 768px) {
+  .layout-main {
+    display: grid;
+    grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr);
+    column-gap: 1.5rem;
+  }
+
+  .layout-main__aside {
+    margin-top: 0; /* align with primary column top */
+  }
+}
