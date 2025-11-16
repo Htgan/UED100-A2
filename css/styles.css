@@ -280,12 +280,21 @@ p {
 /* Basic form layout and feedback styles. */
 
 form {
-  max-width: 480px;
+  max-width: 520px;
 }
 
 /* Group label, control, and error together. */
 .form-field {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+/* Labels slightly stronger and tighter */
+.form-field label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #444;
 }
 
 /* Inputs and textarea share common styling. */
@@ -294,9 +303,9 @@ form {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 0.4rem 0.5rem;
-  border: 1px solid #bbb;
-  border-radius: 4px;
+  padding: 0.48rem 0.6rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
   font: inherit;
   background-color: #fafafa;
 }
@@ -307,6 +316,7 @@ form {
   outline: 2px solid #4a90e2;
   outline-offset: 1px;
   background-color: #ffffff;
+  border-color: #4a90e2;
 }
 
 /* Error message text. */
@@ -613,4 +623,90 @@ footer.section {
   border-color: #ff9800;
   background-color: #fff3e0;
   color: #e65100;
+}
+
+.details-card {
+  position: relative;
+}
+
+/* Gradient area at bottom of card */
+.details-gradient {
+  position: relative;
+  margin-top: 0.75rem;
+  padding-top: 1.6rem;
+  text-align: center;
+}
+
+/* Gradient background behind the text */
+.details-gradient::before {
+  content: "";
+  position: absolute;
+  left: -1.25rem;
+  right: -1.25rem;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(245, 245, 245, 0.96),
+    rgba(245, 245, 245, 0.05)
+  );
+  border-radius: 0 0 10px 10px;
+  pointer-events: none;
+}
+
+/* Text-only toggle, centered */
+.details-gradient .details-toggle {
+  position: relative;
+  border: none;
+  padding: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #009688;
+  cursor: pointer;
+}
+
+/* Optional subtle underline on hover/focus */
+.details-gradient .details-toggle:hover {
+  text-decoration: underline;
+}
+
+.details-gradient .details-toggle:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+/* Description section */
+#description {
+  line-height: 1.7;
+}
+
+/* Slightly larger intro paragraph */
+#description p:first-of-type {
+  font-size: 0.96rem;
+  font-weight: 500;
+}
+
+/* Subsequent paragraphs normal but comfortable */
+#description p + p {
+  font-size: 0.94rem;
+}
+
+/* Add subtle vertical rhythm */
+#description p {
+  margin: 0 0 0.9rem;
+}
+
+/* Contact card spacing tweaks */
+#contact-seller {
+  padding-top: 1.25rem;
+}
+
+#contact-seller .heading-sub {
+  margin-bottom: 0.4rem;
+}
+
+#contact-seller p.muted {
+  margin-bottom: 0.9rem;
 }
