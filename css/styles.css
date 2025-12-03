@@ -758,3 +758,12 @@ footer.section {
 #contact-seller p.muted {
   margin-bottom: 0.9rem;
 }
+
+/* Slightly larger touch-friendly controls (all viewports) */
+.seller-button,
+.details-toggle,
+button[type="submit"],
+.gallery-arrow {
+  min-height: 40px;
+  min-width: 40px;
+}
