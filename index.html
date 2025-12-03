@@ -142,19 +142,19 @@
                 <!-- Each form-field wrapper groups input, label and validation message -->
                 <div class="form-field">
                   <label for="contact-name">Name</label>
-                  <input id="contact-name" name="name" type="text" required>
+                  <input id="contact-name" name="name" type="text" required maxlength="80">
                   <!-- Error placeholder; populated with validation messages via JS -->
                   <p class="form-error" id="error-contact-name"></p>
                 </div>
                 <div class="form-field">
                   <label for="contact-email">Email</label>
-                  <input id="contact-email" name="email" type="email" required>
+                  <input id="contact-email" name="email" type="email" required maxlength="120">
                   <p class="form-error" id="error-contact-email"></p>
                 </div>
                 <div class="form-field">
                   <label for="contact-message">Message</label>
                   <!-- Pre-filled default message to speed up user interaction -->
-                  <textarea id="contact-message" name="message" rows="4" required>Hi, I'm interested in your Blue-and-yellow Macaw (taxidermy). Is it still available?</textarea>
+                  <textarea id="contact-message" name="message" rows="4" required maxlength="1000">Hi, I'm interested in your Blue-and-yellow Macaw (taxidermy). Is it still available?</textarea>
                   <p class="form-error" id="error-contact-message"></p>
                 </div>
                 <button type="submit">Send message</button>

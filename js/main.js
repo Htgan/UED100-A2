@@ -32,6 +32,14 @@ function setupContactForm() {
     // Element where we show the overall status (e.g. success message).
     var statusEl = document.getElementById("contact-status");
 
+    // Simple check to detect unsafe form content.
+    function containsSuspiciousContent(value) {
+        // In a real app we would do server-side sanitisation.
+        // Here we just block obvious HTML/script tags in the message.
+        var lower = value.toLowerCase();
+        return lower.includes("<script") || lower.includes("</") || lower.includes("<iframe");
+    }
+
     // Run validation when the form is submitted.
     form.addEventListener("submit", function(event) {
         // Stop the browser from doing a normal form submit / page reload.
@@ -76,6 +84,12 @@ function setupContactForm() {
         if (!messageInput.value.trim()) {
             // Message must not be empty.
             messageError.textContent = "Please enter a message.";
+            if (!hasError) {
+                messageInput.focus();
+            }
+            hasError = true;
+        } else if (containsSuspiciousContent(messageInput.value)) {
+            messageError.textContent = "Please remove any code or HTML tags from your message.";
             if (!hasError) {
                 messageInput.focus();
             }
