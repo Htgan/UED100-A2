@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <title>Blue and Yellow Macaw - Gumtree Listing Remake</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link to external stylesheet that defines layout and visual styles -->
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+    <!-- Page wrapper to constrain content width and apply global layout -->
     <div class="page">
+      <!-- Page header: title, save button, meta info (price, location, etc.) -->
       <header class="section section-header">
         <div class="header-row">
           <h1 class="heading-main">Blue and Yellow Macaw - Excellent Condition</h1>
+          <!-- Save/star toggle for the listing; JS updates aria-pressed and visual state -->
           <button type="button" class="save-toggle" id="save-toggle" aria-pressed="false"> ☆ Save </button>
         </div>
+        <!-- Basic listing metadata displayed under the title -->
         <p class="muted listing-meta">
           <span>$450</span>
           <span>Listed 3 days ago</span>
@@ -20,20 +25,25 @@
           <span>Ad ID: 1234567890</span>
         </p>
       </header>
+      <!-- Main content region for assistive technologies -->
       <main id="main-content">
+        <!-- Two-column layout: main content + seller sidebar -->
         <div class="layout-main">
-          <!-- LEFT COLUMN: main listing content -->
+          <!-- LEFT COLUMN: main listing content (gallery, details, description, contact) -->
           <div class="layout-main__primary">
+            <!-- Image gallery: main image, navigation arrows, and thumbnails -->
             <section id="gallery" class="section section-gallery">
               <div class="gallery">
                 <div class="gallery-main">
+                  <!-- Primary displayed image; src and caption are updated when thumbnails are clicked -->
                   <img id="gallery-main-image" src="assets/images/macaw-1.jpg" alt="Front view of the Blue-and-yellow Macaw in a perched pose">
                   <p class="gallery-caption muted" id="gallery-main-caption"> Front view of the Blue-and-yellow Macaw in a perched pose </p>
-                  <!-- Overlayed prev/next controls -->
+                  <!-- Overlayed prev/next controls used to cycle through gallery images via JS -->
                   <button type="button" class="gallery-arrow gallery-arrow--prev" id="gallery-prev" aria-label="Previous image"> &lt; </button>
                   <button type="button" class="gallery-arrow gallery-arrow--next" id="gallery-next" aria-label="Next image"> &gt; </button>
-                  <!-- Overlayed thumbnail strip at bottom -->
+                  <!-- Thumbnail strip; clicking a thumb updates the main image using data-* attributes -->
                   <div class="gallery-thumbs" role="list" aria-label="Macaw image thumbnails">
+                    <!-- Each thumbnail stores the URL of the full image and caption via data-full and data-caption -->
                     <button type="button" class="gallery-thumb is-active" role="listitem" data-full="assets/images/macaw-1.jpg" data-caption="Front view of the Blue-and-yellow Macaw in a perched pose">
                       <img src="assets/images/macaw-1-thumb.jpg" alt="Front view of the specimen">
                     </button>
@@ -50,10 +60,11 @@
                 </div>
               </div>
             </section>
+            <!-- Key facts about the item, with a collapsible section for extra info -->
             <section id="key-details" class="section">
               <h2 class="heading-sub">Key details</h2>
               <div class="details-card">
-                <!-- Always-visible key details -->
+                <!-- Always-visible key details displayed in definition list layout -->
                 <dl class="details-grid">
                   <div>
                     <dt>Condition</dt>
@@ -72,7 +83,7 @@
                     <dd>Enjoying with your eyes</dd>
                   </div>
                 </dl>
-                <!-- Collapsible extra details (initially hidden) -->
+                <!-- Collapsible extra details (shown/hidden by the "View more details" button) -->
                 <div id="extra-details" class="details-extra" hidden>
                   <dl class="details-grid">
                     <div>
@@ -89,25 +100,31 @@
                     </div>
                   </dl>
                 </div>
-                <!-- Gradient overlay + centered toggle button -->
+                <!-- Gradient overlay at bottom of card with toggle button to reveal/hide extra details -->
                 <div class="details-gradient">
+                  <!-- aria-expanded and aria-controls are updated by JS to reflect open/closed state -->
                   <button type="button" class="details-toggle" id="details-toggle" aria-expanded="false" aria-controls="extra-details"> View more details </button>
                 </div>
               </div>
             </section>
+            <!-- Text description of the item -->
             <section id="description" class="section">
               <h2 class="heading-sub">Description</h2>
               <p> Stunning Blue-and-yellow Macaw (taxidermy) for sale. This is a professionally mounted, full-body specimen in a classic perched pose, ideal for display in a study, shop, bar, or collection. </p>
               <p> Plumage colours are still bright, with vivid blues and rich golden-yellow on the chest. The mount is clean and stable, with glass eyes and a natural-looking wooden perch. Overall length is approximately 80-85 cm from head to tail. </p>
               <p> Kept in a smoke-free indoor environment and regularly dusted. Only selling as I'm downsizing my collection. Pickup in Manly, or I can pack and post at buyer's expense. </p>
             </section>
+            <!-- Contact form allowing potential buyers to message the seller -->
             <section id="contact-seller" class="section">
               <h2 class="heading-sub">Contact seller</h2>
-              <p> Use this form to send a message to the seller. Please include your preferred contact details. </p>
+              <p>Use this form to send a message to the seller. Please include your preferred contact details.</p>
+              <!-- novalidate disables browser default validation so custom JS validation can be used -->
               <form id="contact-form" novalidate>
+                <!-- Each form-field wrapper groups input, label and validation message -->
                 <div class="form-field">
                   <label for="contact-name">Name</label>
                   <input id="contact-name" name="name" type="text" required>
+                  <!-- Error placeholder; populated with validation messages via JS -->
                   <p class="form-error" id="error-contact-name"></p>
                 </div>
                 <div class="form-field">
@@ -117,46 +134,57 @@
                 </div>
                 <div class="form-field">
                   <label for="contact-message">Message</label>
+                  <!-- Pre-filled default message to speed up user interaction -->
                   <textarea id="contact-message" name="message" rows="4" required>Hi, I'm interested in your Blue-and-yellow Macaw (taxidermy). Is it still available?</textarea>
                   <p class="form-error" id="error-contact-message"></p>
                 </div>
                 <button type="submit">Send message</button>
+                <!-- Live region used to announce submission success/failure to screen readers -->
                 <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
               </form>
             </section>
           </div>
-          <!-- RIGHT COLUMN: seller panel -->
+          <!-- RIGHT COLUMN: seller panel with price, seller info, and offer form -->
           <aside id="seller-details" class="section layout-main__aside">
-            <!-- Price highlighted at the top of the seller panel -->
+            <!-- Price repeated in sidebar for quick visibility when scrolled -->
             <p class="seller-price">$450</p>
             <h2 class="heading-sub">Seller details</h2>
             <p class="seller-name">John D.</p>
             <p class="muted">Joined Gumtree in 2016 · 54 ads</p>
-            <!-- Primary action: message seller via platform (dummy button) -->
+            <!-- Primary CTA: generic "Message seller" button (non-functional placeholder) -->
             <button type="button" class="seller-button seller-button--primary"> Message seller </button>
-            <!-- Secondary action: make an offer -->
+            <!-- Offer section where buyers can submit an alternative price -->
             <section class="seller-offer">
               <h3 class="seller-offer__heading">Make an offer</h3>
-              <p class="muted"> Enter an offer amount and send it to the seller. </p>
+              <p class="muted">Enter an offer amount and send it to the seller.</p>
+              <!-- novalidate again to allow custom validation in JS -->
               <form class="seller-offer__form" novalidate>
                 <label for="offer-amount" class="seller-offer__label">Your offer</label>
                 <div class="seller-offer__row">
+                  <!-- Static currency symbol, visually aligned with input -->
                   <span class="seller-offer__currency">$</span>
+                  <!-- Numeric input with constraints for minimum and step size -->
                   <input id="offer-amount" name="offer-amount" type="number" min="1" step="1" class="seller-offer__input" value="450">
                 </div>
+                <!-- Secondary CTA for sending the offer; actual behavior handled in JS -->
                 <button type="submit" class="seller-button seller-button--secondary"> Send offer </button>
               </form>
             </section>
           </aside>
         </div>
       </main>
+      <!-- Page footer with attribution -->
       <footer class="section">
         <p>Mock Up Gumtree Listing Page by Tong Han</p>
       </footer>
     </div>
+    <!-- Main JS bundle for general page interactions (forms, save toggle, back-to-top, etc.) -->
     <script src="js/main.js"></script>
+    <!-- Separate JS module specifically handling gallery behavior (thumbnails, arrows) -->
     <script src="js/gallery.js"></script>
+    <!-- Floating "Back to top" button that scrolls user to top of page when clicked -->
     <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">
+      <!-- Icon-only button; empty alt keeps it purely decorative (accessible name is from aria-label) -->
       <img src="assets/images/double_up_arrow.png" alt="" class="back-to-top-icon">
     </button>
   </body>
