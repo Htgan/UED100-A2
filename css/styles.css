@@ -752,6 +752,20 @@ footer.section {
   margin: 0 0 0.9rem;
 }
 
+.description-highlights {
+  margin: 0.35rem 0 0.9rem;
+  padding-left: 1.1rem;
+  font-size: 0.94rem;
+}
+
+.description-highlights li {
+  margin-bottom: 0.25rem;
+}
+
+.description-highlights li::marker {
+  color: #009688;
+}
+
 /* Contact card spacing tweaks */
 #contact-seller {
   padding-top: 1.25rem;
