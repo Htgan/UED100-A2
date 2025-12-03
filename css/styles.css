@@ -532,6 +532,57 @@ footer.section {
   border-top: 1px solid #eee;
 }
 
+/* Mobile-first readability and touch target improvements */
+@media (max-width: 600px) {
+  body {
+    font-size: 1rem;           /* slightly larger base text on small screens */
+    line-height: 1.6;
+  }
+
+  p,
+  .muted {
+    font-size: 0.95rem;        /* bump general text size a bit */
+  }
+
+  .heading-main {
+    font-size: 1.7rem;         /* scale headings slightly down to avoid overpowering */
+  }
+
+  .heading-sub {
+    font-size: 1.1rem;
+  }
+
+  /* Add a bit more breathing room between sections on small screens */
+  #gallery,
+  #key-details,
+  #description,
+  #contact-seller,
+  #seller-details {
+    margin-bottom: 1.25rem;
+  }
+
+  /* Larger tap targets for buttons */
+  .save-toggle,
+  .seller-button,
+  .details-toggle,
+  button[type="submit"] {
+    padding: 0.6rem 1.1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Gallery thumbnails: larger and easier to tap */
+  .gallery-thumb {
+    width: 72px;
+    height: 60px;
+  }
+
+  /* Slightly more padding on form fields */
+  .form-field input,
+  .form-field textarea {
+    padding: 0.55rem 0.7rem;
+  }
+}
+
 /* Responsive: on wider screens, put the aside on the right. */
 @media (min-width: 768px) {
   .layout-main {
