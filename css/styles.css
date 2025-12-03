@@ -773,3 +773,19 @@ button[type="submit"],
   min-height: 40px;
   min-width: 40px;
 }
+
+/* Stronger focus states for keyboard users */
+:focus-visible {
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.gallery-arrow:focus,
+.seller-button:focus,
+button[type="submit"]:focus,
+.details-toggle:focus,
+.save-toggle:focus,
+.gallery-thumb:focus {
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+}
