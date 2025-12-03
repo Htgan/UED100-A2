@@ -535,17 +535,17 @@ footer.section {
 /* Mobile-first readability and touch target improvements */
 @media (max-width: 600px) {
   body {
-    font-size: 1rem;           /* slightly larger base text on small screens */
+    font-size: 1rem;
     line-height: 1.6;
   }
 
   p,
   .muted {
-    font-size: 0.95rem;        /* bump general text size a bit */
+    font-size: 0.95rem;
   }
 
   .heading-main {
-    font-size: 1.7rem;         /* scale headings slightly down to avoid overpowering */
+    font-size: 1.7rem;
   }
 
   .heading-sub {
@@ -581,6 +581,7 @@ footer.section {
   .form-field textarea {
     padding: 0.55rem 0.7rem;
   }
+
 }
 
 /* Responsive: on wider screens, put the aside on the right. */
@@ -702,17 +703,22 @@ footer.section {
   pointer-events: none;
 }
 
-/* Text-only toggle, centered */
 .details-gradient .details-toggle {
   position: relative;
   border: none;
-  padding: 0;
+  padding: 0.1rem 0.2rem;
   background: none;
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  color: #009688;
+  color: #00796b;
   cursor: pointer;
+}
+
+/* Add a small chevron icon via ::after */
+.details-gradient .details-toggle::after {
+  content: " ▼";
+  font-size: 0.85em;
 }
 
 /* Optional subtle underline on hover/focus */
