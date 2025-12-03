@@ -126,7 +126,7 @@ function setupDetailsToggle() {
         extraDetails.hidden = !newExpanded;
 
         // Update button text so it reads naturally in both states.
-        toggle.textContent = newExpanded ? "View fewer details" : "View more details";
+        toggle.textContent = newExpanded ? "Hide extra details" : "View more details";
     });
 };
 
